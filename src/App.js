@@ -1,6 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+const MediaInfo = require("mediainfo.js");
+MediaInfo({ chunkSize: 1024 * 1024, format: "object" }, (mediainfo) => {
+  console.log(mediainfo);
+});
 
 function App() {
   return (
