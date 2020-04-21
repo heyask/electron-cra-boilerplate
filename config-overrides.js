@@ -18,7 +18,7 @@ module.exports = {
             "dist",
             "mediainfo.wasm"
           ),
-          to: "static/js",
+          to: ".",
         },
       ])
     )
