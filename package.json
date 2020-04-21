@@ -11,12 +11,14 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
-  "main": "public/main.js",
+  "main": "public/electron.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
+    "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-nodemon": "nodemon --exec electron .",
     "electron": "electron ."
   },
   "eslintConfig": {
@@ -35,6 +37,12 @@
     ]
   },
   "devDependencies": {
-    "electron": "^8.2.3"
+    "concurrently": "^5.1.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "customize-cra": "^0.9.1",
+    "electron": "^8.2.3",
+    "electron-builder": "^22.5.1",
+    "react-app-rewired": "^2.1.5",
+    "wait-on": "^4.0.2"
   }
 }
